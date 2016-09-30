@@ -1,0 +1,37 @@
+.book-example {
+  align-items: center;
+}
+
+.book-example .remove-icon {
+  box-sizing: border-box;
+  height: 30px;
+  width:auto;
+  padding: 2px;
+  margin-left: 10px;
+  border: 2px solid transparent;
+  border-radius: 3px;
+}
+
+.book-example .remove-icon:hover{
+  border-color: red;
+}
+
+.book-example.sum {
+  display: flex;
+  align-items: center;
+}
+
+
+.sum .book-description {
+  display: flex;
+  padding-right:  20px;
+}
+
+.sum .book-price {
+  flex-basis: 140px;
+}
+
+
+.sum .book-description span{
+  margin-left: auto;
+}

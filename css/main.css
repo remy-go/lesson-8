@@ -1,0 +1,156 @@
+html, body {
+  height: 100%;
+}
+
+
+#page {
+  display: flex;
+  flex-direction: column;
+  width: 1000px;
+  max-width: 100%;
+  margin: 0 auto;
+  min-height: 100%;
+}
+
+#page  header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100px;
+  border-bottom: solid px orange;
+  margin-bottom:20px;
+}
+
+#page  h1 {
+  text-align: center;
+  font-family: Tahoma, Verdana, Arial, sans-serif;
+  color: grey;
+  line-height: 165px;
+}
+
+nav {
+  display: flex;
+  height: 50px;
+  border-bottom: grey 1px solid;
+  margin-bottom: 40px;
+  padding: 10px;
+}
+
+nav .nav-button {
+  display: flex;
+  margin: 0 5px;
+  width: 165px;
+  font-size: 15px;
+  padding: 4px;
+  align-items: center;
+  border: 1px solid silver;
+  border-radius: 2px;
+}
+
+nav .nav-button:hover {
+  border-color: gray;
+}
+
+nav .book-list {
+  margin-left: auto;
+}
+
+
+#page  h2 {
+  text-align: center;
+}
+
+nav a {
+  display: block;
+  text-decoration: none;
+  padding: 0 2px;
+}
+
+
+#content {
+  flex-grow: 1;
+  box-sizing: border-box;
+}
+
+#book-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.book-example {
+  display: none;
+  flex-grow: 1;
+  min-height: 60px;
+  margin: 10px 5px;
+  padding: 5px;
+  border-bottom: solid 1px grey;
+}
+
+.book-example img {
+  height: 50px;
+}
+
+.book-example .basket-icon {
+  box-sizing: border-box;
+  height: 50px;
+  padding: 2px;
+  margin-left: 10px;
+  border: 2px solid transparent;
+  border-radius: 3px;
+}
+
+.book-example .basket-icon:hover {
+  border-color: orange;
+}
+
+.book-example .book-description {
+  font-family: Georgia, Times, Times New Roman, serif;
+  font-size: 17px;
+  color: #292f33;
+  background-color: white;
+  flex-grow: 1;
+  margin: 0 10px;
+  border-right: solid 1px grey;
+  margin-left: 20px;
+}
+
+.additional, .more-less .less-text, .less .more-text, .hidden-when-shorter, .display-options .long {
+  display: none;
+}
+
+
+.less .less-text {
+  display: inline;
+}
+
+.book-example .more-less {
+  color: skyblue;
+  font-style: oblique;
+  cursor: pointer;
+}
+
+.book-example .more-less:hover {
+  color: steelblue;
+  cursor: pointer;
+}
+
+.book-example .book-price {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  height: 50px;
+  flex-basis: 100px;
+  flex-shrink: 0;
+  font-size: 18px;
+}
+
+
+footer {
+  height: 100px;
+  width: 100%;
+}
+
+footer div {
+  text-align: center;
+  line-height: 100px;
+}

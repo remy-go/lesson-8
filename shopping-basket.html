@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Knygos</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/shopping-basket.css">
+  </head>
+  <body>
+    <div id="page">
+      <header>
+        <h1></h1>
+      </header>
+        <nav>
+          <a href="index.html" class="nav-button book-list"><div >Prekių
+              sąrašas</div></a>
+          <a class="nav-button basket" href="shopping-basket.html" ><div
+              >Pirkinių krepšelis  <span class="amount"></span></div></a>
+        </nav>
+        <div id="content">
+          <div class="book-example">
+            <div class="book-description">
+              <span></span></br>
+              <span></span>
+              (kiekis:
+              <span class="copies"></span>)
+            </div>
+            <div class="amount"></div>
+            <div class="book-price"></div>
+            <img class="remove-icon" src="images/close-icon.svg">
+          </div>
+          <div id="book-list">
+          </div>
+          <div class="book-example sum">
+            <div class="book-description"><span>Iš viso: </span></div>
+            <div class="book-price"><span>0,00 €</span> </div>
+          </div>
+        </div>
+
+      <footer>
+        <div>2016</div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="js/get-list.js"></script>
+    <script type="text/javascript" src="js/common-functions.js"></script>
+    <script type="text/javascript" src="js/shopping-basket.js"></script>
+
+  </body>
+</html>
