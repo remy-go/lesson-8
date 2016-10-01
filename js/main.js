@@ -9,7 +9,7 @@ var books = bookJSON,
   for(var book in books) {
     var bookField = bookExample.cloneNode(true),
         addButton = bookField.children[3], 
-        moreLess = bookField.children[1].children[4];
+        moreLess = bookField.children[1].children[4],
         additional = bookField.children[1].children[6];
 
     setHTML(bookField, book);
@@ -43,7 +43,7 @@ function addToBasketListener(button, item) {
 displayOptionsButton.addEventListener('click', showShorterToogle); 
 
 function showShorterToogle() {
-  var hiddenWhenShorter = document.querySelectorAll('.book-cover, .more-less, .additional');
+  var hiddenWhenShorter = document.querySelectorAll('.book-cover, .more-less, .book-description p');
   for(i = 0; i < hiddenWhenShorter.length; i++) {
     hiddenWhenShorter[i].classList.toggle('hidden-when-shorter');
   }
