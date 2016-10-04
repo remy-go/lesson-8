@@ -1,4 +1,6 @@
-{
+var Books = (function() {
+
+var books = {
 "9789955707806": {
 "title": "Atmintinė. Microsoft Word 2010",
 "author": "Vilija Stankienė",
@@ -128,4 +130,15 @@
 "image": "cover-3.png"
 
 }
+};
+
+function pricesToIntegers() {
+for (var book in books) {
+  books[book].price = Math.round(books[book].price * 100);
+  }
 }
+
+pricesToIntegers();
+return books;
+
+})();

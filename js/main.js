@@ -1,11 +1,13 @@
 (function () {
-var books = bookJSON,
-  bookList = document.getElementById('book-list'),
-  bookExample = document.getElementsByClassName('book-example')[0],
-  displayOptionsButton = document.querySelector('nav .display-options'),
-  amountInBasketField = document.querySelector('nav .amount');
+var bookList = document.getElementById('book-list'),
+    bookExample = document.getElementsByClassName('book-example')[0],
+    displayOptionsButton = document.querySelector('nav .display-options'),
+    amountInBasketField = document.querySelector('nav .amount'),
+    books = Books,
+    storage = Storage,
+    basket = Basket;
 
-(function renderBookList() { 
+function renderBookList() { 
   for(var book in books) {
     var bookField = bookExample.cloneNode(true),
         addButton = bookField.children[3], 
@@ -18,7 +20,7 @@ var books = bookJSON,
     bookField.style.display = 'flex';
     bookList.appendChild(bookField);
   }
-})();
+}
 
 function setMoreLessListener(moreLess, additional) {
   moreLess.addEventListener('click', function() {
@@ -27,14 +29,14 @@ function setMoreLessListener(moreLess, additional) {
   });
 }
 
-function setAddToBasketListener(button, item) {
-  button.addEventListener('click', function() { addToBasketListener(button, item); }); 
+function setAddToBasketListener(button, book) {
+  button.addEventListener('click', function() { addToBasketListener(button, book); }); 
 }
 
-function addToBasketListener(button, item) {
-  var remaining = storage.getRemaining(item);
+function addToBasketListener(button, book) {
+  var remaining = storage.getRemaining(book);
   if(remaining > 0) {
-    storage.addToBasket(item);
+    basket.add(book);
     button.parentNode.children[1].children[3].innerHTML = --remaining; 
   }
   amountInBasketField.innerHTML = storage.getAmountInBasket();
@@ -61,5 +63,7 @@ function setHTML(bookField, book) {
   bookField.children[2].innerHTML = parseFloat(books[book].price/100).toFixed(2).replace('.', ',') + ' €';
   amountInBasketField.innerHTML = storage.getAmountInBasket();
 }
+
+renderBookList();
 
 })();

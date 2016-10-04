@@ -1,12 +1,14 @@
 (function() {
 
-var books = bookJSON,
-    bookList = document.getElementById('book-list'),
+var bookList = document.getElementById('book-list'),
     bookExample = document.getElementsByClassName('book-example')[0],
     amountInBasketField = document.querySelector('nav .amount'),
-    sumField = document.querySelector('.sum .book-price');
+    sumField = document.querySelector('.sum .book-price'),
+    books = Books,
+    storage = Storage,
+    basket = Basket;
 
-(function renderBasket() {
+function renderBasket() {
   var booksInBasket = storage.getBasket();
   amountInBasketField.innerHTML = storage.getAmountInBasket();
   for(var book in booksInBasket) {
@@ -18,7 +20,7 @@ var books = bookJSON,
     bookList.appendChild(bookField);
   }
   sumField.innerHTML = getSum(booksInBasket).replace('.', ',') + ' €'; 
-})();
+}
 
 function getSum(basket) {
   var sum = 0;
@@ -37,7 +39,7 @@ function setRemoveButtonListener(bookField) {
 
 function removeButtonListener(bookField) {
   var book = bookField.getAttribute('id');
-  if(storage.removeFromBasket(book) === 'last') {
+  if(basket.remove(book) === 'last') {
     bookField.parentNode.removeChild(bookField);
   }
   amountInBasketField.innerHTML = storage.getAmountInBasket();
@@ -52,5 +54,5 @@ function setHTML(bookField, book) {
   bookField.children[0].children[3].innerHTML = number; 
   bookField.children[2].innerHTML = parseFloat(number * books[book].price/100).toFixed(2).replace('.', ',') + ' €';
 }
-
+renderBasket();
 })();
