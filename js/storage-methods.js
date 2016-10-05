@@ -1,7 +1,5 @@
 var Storage = (function() {
 
-var books = Books;
-
 function getAmountInBasket() {
   var amount = localStorage.getItem('amountInBasket');
   return amount;

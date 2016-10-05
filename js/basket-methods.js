@@ -16,16 +16,13 @@ function decreaseRemaining(book) {
   var remaining = storage.getRemaining();
   if(--remaining[book] >= 0) {
     storage.updateRemaining(remaining);
-    return remaining;
   }
-  return -1;
 }
 
 function increaseRemaining(book) {
   var remaining = storage.getRemaining();
   remaining[book]++;
   storage.updateRemaining(remaining);
-  return remaining[book];
 }
 
 function addToBasket(book) {

@@ -1,6 +1,7 @@
 (function() {
 
 var books = Books;
+var MAX_BOOK_LIMIT = 5;
 
 function initiateBasket() {
   if(!localStorage.basket) {
@@ -18,7 +19,7 @@ function initiateRemaining() {
   if(!localStorage.remaining) {
     var remaining = {};
     for(var book in books) {
-      remaining[book] = 5;
+      remaining[book] = MAX_BOOK_LIMIT;
     }
     localStorage.remaining = JSON.stringify(remaining);
   }
